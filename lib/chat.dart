@@ -34,17 +34,18 @@ class ChatScreen extends StatefulWidget {
 class _ChatScreenState extends State<ChatScreen> {
   TextEditingController _userInput = TextEditingController();
 
-  static const apiKey = "AIzaSyCRLlRLANu0k3Rz-myvU5boGFMApdPTZEc";
+  static const apiKey = "AIzaSyCaB1LVrDodbmqFoTzXnorL0wF9zoOsios";
   final model = GenerativeModel(model: 'gemini-pro', apiKey: apiKey);
   final List<Message> _messages = [];
 
   Future<void> sendMessage() async {
     final message = _userInput.text;
-    final prompt = "Based on given input you have to reply, you are a chatbot for freshman students of dayananda sagar college of engineering. when freshman come bangalore from different places they found information overloaded which becomes a key challenge impeding overall mental health and causing discomfort. Tell user about bangalore and dsce, highlight important stuff and reply them with 100 words only. Donot use * and highlight answer with data and numerical value. You are suppose to great one time not all the time";
+    final prompt = "Based on given input you have to reply, you are a chatbot for freshman students of dayananda sagar college of engineering. when freshman come bangalore from different places they found information overloaded which becomes a key challenge impeding overall mental health and causing discomfort. Tell user about bangalore and dsce, highlight important stuff and reply them with 10 to 100 words only write shorter answer with most of time. Don't use * and highlight answer with data and numerical value. Many of the freshmen college students come from different places and adapting to Bangalore, quirks of college life with information overload becomes a key challenge impeding their overall mental health and causing discomfort. DSCE grapples with a time and resources consuming challenge to cater to this. Use data and numercial value also.";
+   // final prompt = "Based on given input you have to reply, you are a chatbot for freshman students of dayananda sagar college of engineering. when freshman come bangalore from different places they found information overloaded which becomes a key challenge impeding overall mental health and causing discomfort. Tell user about bangalore and dsce, highlight important stuff and reply them with 10 to 100 words only write shorter answer with most of time. Don't use * and highlight answer with data and numerical value. Many of the freshmen college students come from different places and adapting to Bangalore, quirks of college life with information overload becomes a key challenge impeding their overall mental health and causing discomfort. DSCE grapples with a time and resources consuming challenge to cater to this. Use data and numercial value also. If user will ask for placement help them with accurate placement of dsce with numerical data same with other responses.";
 
     setState(() {
       _messages.add(Message(isUser: true, message: message, date: DateTime.now()));
-      _userInput.clear(); // Empty the text field after sending the message
+      _userInput.clear();
     });
 
     final content = [Content.text(prompt)];

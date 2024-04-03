@@ -19,3 +19,7 @@ samples, guidance on mobile development, and a full API reference.
 
 https://github.com/itheaks/dsce_chat/assets/134759689/d4401f5f-ebba-4f3b-b315-019ef9c8945a
 
+## OUTPUT
+
+![certificate - gen ai_page-0001](https://github.com/itheaks/dsce_chat/assets/134759689/b2643ce1-a3a9-4176-9b64-275ca724dc23)
+
